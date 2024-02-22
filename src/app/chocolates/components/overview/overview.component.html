@@ -1,0 +1,38 @@
+<div class="shadow-lg p-3 mb-5 bg-white rounded">
+    <span class="fs-4">Chocolates Overview</span>
+    <table class="table table-striped table-bordered mt-3">
+      <thead class="table-light">
+        <tr class="align-middle">
+          <th>Name</th>
+          <th>Manufacturer</th>
+          <th>
+            <p class="fw-bold mb-0">lowest price</p>
+            <p class="fw-normal text-muted mb-0">(per 100g)</p>
+          </th>
+          <th>
+            <p class="fw-bold mb-0">average price</p>
+            <p class="fw-normal text-muted mb-0">(per 100g)</p>
+          </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (chocolate of chocolates; track chocolate.id) {
+        <tr>
+          <td>{{ chocolate.name }}</td>
+          <td>{{ chocolate.brand }}</td>
+          <td>{{ chocolate.lowestPrice | number: '1.2-2' }}</td>
+          <td>{{ chocolate.averagePrice | number: '1.2-2' }}</td>
+          <td class="text-end">
+            <button class="btn btn-outline-info shadow" *ngIf="chocolate.directLink"
+              (click)="handleDirectLinkClick(chocolate.directLink)" type="button">
+              Open Link
+            </button>
+            &nbsp;
+            <a class="btn btn-info shadow" [routerLink]="chocolate.id">Details</a>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
