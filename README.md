@@ -45,3 +45,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 `npm install @ngrx/store @ngrx/store-devtools @ngrx/effects` using NgRx Store to maintain the state management
 
+`npm install @angular/material` to use angular material paginator in the overview page
