@@ -7,11 +7,12 @@ import { Subscription, filter } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { State, UPDATE_CHOCOLATE_DETAILS_REQUEST, getChocolateDetails, getChocolateResponse, resetStateProperty } from '../../state';
 import { Nutrition } from '../../models/chocolate.model';
+import { PieChartComponent } from '../../../shared/components';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, PieChartComponent],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss'
 })
