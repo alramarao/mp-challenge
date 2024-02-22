@@ -35,3 +35,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 `json-server` to use proxy server with mock json data
 `consurrently` to run json-server proxy server and angular application simultaneously
+`ng g environments` to configure and store environment variables
