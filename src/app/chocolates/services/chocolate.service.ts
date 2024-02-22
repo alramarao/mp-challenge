@@ -11,7 +11,7 @@ export class ChocolateService {
   constructor(private httpClient: HttpClient) {}
 
   getChocolates(pageNo: number): Observable<ChocolatesTableList> {
-    let params = new HttpParams().set('page', String(pageNo));
+    const params = new HttpParams().set('page', String(pageNo));
     return this.httpClient.get<ChocolatesTableList>('/chocolates', { params });
   }
 

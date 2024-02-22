@@ -58,7 +58,7 @@ export const ChocolateReducer = createReducer<ChocolateState>(
       error: action.error,
     };
   }),
-  on(ChocolateApiActions.UPDATE_CHOCOLATE_DETAILS_SUCCESS, (state, action) => {
+  on(ChocolateApiActions.UPDATE_CHOCOLATE_DETAILS_SUCCESS, (state) => {
     return {
       ...state,
       chocolateResponse: true,
