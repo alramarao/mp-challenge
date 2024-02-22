@@ -37,3 +37,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 `npm install consurrently` to run json-server proxy server and angular application simultaneously
 `ng generate environments` to configure and store environment variables
 `npm install bootstrap` to grab quick and simple styles
+`ng add @angular-eslint/schematics` to prevent verify lint errors
