@@ -7,6 +7,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+Run `npm run api:mock` to start the mock json-server with mock data which can be accessible on `http://localhost:4200/`
+
+Run `npm run start:mock` to start the mock json-server and concurrently run angular application
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
@@ -26,3 +30,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Packages Installed
+
+`json-server` to use proxy server with mock json data
+`consurrently` to run json-server proxy server and angular application simultaneously
