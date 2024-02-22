@@ -1,0 +1,56 @@
+<span class="fs-4">Chocolate Details</span>
+<div class="row mt-3" *ngIf="chocolateDetails !== null">
+    <div class="col-sm-8 mb-3 mb-sm-0">
+        <div class="card shadow">
+            <div class="card-body">
+                <form [formGroup]="chocolateForm">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="name" formControlName="name" placeholder="name">
+                        <label for="name">Name</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="brand" formControlName="brand" placeholder="brand">
+                        <label for="brand">Brand</label>
+                    </div>
+                    <div class="text-end">
+                        <button type="button" class="btn btn-primary" [attr.aria-disabled]="!chocolateForm.valid"
+                            (click)="handleSave()">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card shadow mt-4">
+            <div class="card-body">
+                <h5 class="card-title">Prices</h5>
+                <table class="table table-striped table-bordered mb-0">
+                    <thead class="table-light">
+                        <tr class="align-middle">
+                            <th>Amount</th>
+                            <th>Shop Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (price of chocolateDetails.prices; track price.price) {
+                        <tr>
+                            <td>
+                                {{ chocolateDetails.currency }} {{ price.amount }}
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-link" (click)="handleLinkClick(price.link)">{{
+                                    price.link }}</button>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-sm-12">
+        <a [routerLink]="'../'" class="btn btn-outline-secondary shadow">Back</a>
+    </div>
+</div>
