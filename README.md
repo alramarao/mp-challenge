@@ -34,6 +34,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 `npm install ng2-charts chart.js` to use pie chart in details page
 
 ## Taks
+I have spent around 7-8 hours to complete the below tasks including the bonus items which are mentioned in the pdf, along with the other bonus items which I added to the application
 
 ### Overview page
     Displaying the chocolate over table with below columns
