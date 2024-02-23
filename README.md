@@ -11,25 +11,9 @@ Run `npm run api:mock` to start the mock json-server with mock data which can be
 
 Run `npm run start:mock` to start the mock json-server and concurrently run angular application
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## Packages Installed
 
@@ -48,3 +32,32 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 `npm install @angular/material` to use angular material paginator in the overview page
 
 `npm install ng2-charts chart.js` to use pie chart in details page
+
+## Taks
+
+### Overview page
+    Displaying the chocolate over table with below columns
+    - Name
+    - Brand
+    - Lowest price per 100g
+    - Average price for 100g
+    - Link to the cheapest shop
+
+    Bonus items:
+    - Added Details button for each row to navigate the user to details component
+    - Added Paginator using angular material to access more items, it has connected to GET API to fetch based on page index.
+
+### Details page
+    Displaying the details for selected chocolate.
+    - Widget-1 - displaying Name and Brand
+    - Widget-2 for Prices - Displaying all the prices in a table for that specific chocolate, `Amount` and `Shop Link` are the columns in the prices table
+    
+    Bonus items:
+    - Added new widget for Nutrition details which shows the Pie chart with nutrition values for respective chocolate
+    - Highliting the cheapest price per 100g in the details view (Highlighting the row with bootstrap primary color)
+    - Making the Name and Brand are editable and also completed the implementation to push the changes to back end API
+
+### Bonus items which are not described in the document:
+    - Used NgRx Redux for state management
+    - Used Bootstrap to make UI much better
+    - Used json-server to proxy the backend server instead of reading the .json file directly.

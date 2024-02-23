@@ -32,7 +32,7 @@
                     </thead>
                     <tbody>
                         @for (price of chocolateDetails.prices; track price.price) {
-                        <tr>
+                        <tr [ngClass]="{'table-primary': chocolateDetails.lowestPrice === price.pricePer100g}">
                             <td>
                                 {{ chocolateDetails.currency }} {{ price.amount }}
                             </td>

@@ -4,7 +4,7 @@
     <thead class="table-dark">
       <tr class="align-middle">
         <th>Name</th>
-        <th>Manufacturer</th>
+        <th>Brand</th>
         <th class="text-center">
           <p class="fw-bold mb-0">Lowest Price</p>
           <p class="fw-lighter mb-0">(per 100g)</p>
@@ -21,8 +21,12 @@
       <tr>
         <td>{{ chocolate.name }}</td>
         <td>{{ chocolate.brand }}</td>
-        <td class="text-center">{{ chocolate.lowestPrice | number: '1.2-2' }}</td>
-        <td class="text-center">{{ chocolate.averagePrice | number: '1.2-2' }}</td>
+        <td class="text-center">
+          {{ chocolate.lowestPrice ? chocolate.currency: '' }} {{ chocolate.lowestPrice | number: '1.2-2' }}
+        </td>
+        <td class="text-center">
+          {{ chocolate.lowestPrice ? chocolate.currency: '' }} {{ chocolate.averagePrice | number: '1.2-2' }}
+        </td>
         <td class="text-end">
           <button class="btn btn-outline-secondary shadow" *ngIf="chocolate.directLink"
             (click)="handleDirectLinkClick(chocolate.directLink)" type="button">

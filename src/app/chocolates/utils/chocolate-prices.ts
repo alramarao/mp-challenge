@@ -1,12 +1,11 @@
 import { ChocolatePrice } from '../models';
 import { getAveragePrice } from './average-price';
-import { getLowestPriceLink } from './cheapest-direct-link';
-import { getLowestPrice } from './lowest-price';
+import { getLowestPriceShop } from './cheapest-shop';
 
 /**
  * Calculating custom properties (lowestPrice, averagePrice, directLink) and returning them.
  * @param prices ChocolatePrice (shop)
- * @returns custom properties
+ * @returns custom properties along with prices
  */
 export const getChocolatePrices = (prices: ChocolatePrice[]) => {
   if (prices.length <= 0) {
@@ -18,10 +17,14 @@ export const getChocolatePrices = (prices: ChocolatePrice[]) => {
       pricePer100g: getPricePer100g(price, PriceUnitTypes),
     };
   });
+  // Finding the shop which has the lowest price by 100g
+  const lowestPriceShop = getLowestPriceShop(_prices);
+
   return {
-    lowestPrice: getLowestPrice(_prices),
+    lowestPrice: lowestPriceShop.pricePer100g,
     averagePrice: getAveragePrice(_prices),
-    directLink: getLowestPriceLink(_prices),
+    directLink: lowestPriceShop.link,
+    prices: _prices
   };
 };
 
