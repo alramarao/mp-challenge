@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { ChocolatesTableList } from '../models';
 import { createReducer, on } from '@ngrx/store';
 import { ChocolateApiActions, ChocolatePageActions } from './actions';
-import { getAveragePrice, getLowestPrice, getLowestPriceLink } from '../utils';
+import { getChocolatePrices } from '../utils';
 
 export interface State {
   chocolate: ChocolateState;
@@ -43,9 +43,7 @@ export const ChocolateReducer = createReducer<ChocolateState>(
         data: action.chocolates.data.map((chocolate) => {
           return {
             ...chocolate,
-            lowestPrice: getLowestPrice(chocolate.prices),
-            averagePrice: getAveragePrice(chocolate.prices),
-            directLink: getLowestPriceLink(chocolate.prices),
+            ...getChocolatePrices(chocolate.prices),
           };
         }),
       },

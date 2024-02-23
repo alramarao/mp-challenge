@@ -1,9 +1,5 @@
-import { getAveragePrice } from "./average-price";
-import { getLowestPriceLink } from "./cheapest-direct-link";
-import { getLowestPrice } from "./lowest-price";
+import { getChocolatePrices } from "./chocolate-prices";
 
 export {
-    getAveragePrice,
-    getLowestPrice,
-    getLowestPriceLink
+    getChocolatePrices
 };

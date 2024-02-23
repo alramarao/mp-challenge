@@ -9,7 +9,7 @@ export interface Chocolate {
     currency: string;
     prices: ChocolatePrice[];
     nutrition: Nutrition;
-    // custom fileds
+    // custom properties
     lowestPrice: number | null;
     averagePrice: number| null;
     directLink: string| null;
@@ -21,6 +21,8 @@ export interface ChocolatePrice {
     link: string;
     unit: string;
     amount: number;
+    // custom properties
+    pricePer100g: number;
 }
 
 export interface Nutrition {
